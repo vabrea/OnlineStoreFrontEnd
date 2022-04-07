@@ -1,0 +1,8 @@
+.navBar {
+  background-color: black;
+  border: 1px solid white;
+}
+.navBar h1 {
+  text-align: left;
+  color: white;
+}
