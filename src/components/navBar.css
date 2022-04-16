@@ -1,8 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600&family=Lobster&display=swap");
+
 .navBar {
   background-color: black;
   border: 1px solid white;
 }
 .navBar h1 {
   text-align: left;
-  color: white;
+  color: black;
+}
+
+.navbar-brand {
+  font-family: "Lobster", cursive;
 }

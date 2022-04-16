@@ -38,3 +38,9 @@
     transform: rotate(360deg);
   }
 }
+
+.App h1 {
+  font-family: "Lobster", cursive;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}

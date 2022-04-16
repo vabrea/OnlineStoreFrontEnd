@@ -3,14 +3,20 @@ import './App.css';
 import NavBar from './components/navBar';
 import Footer from './components/footer';
 import Catalog from './components/catalog';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import About from './components/about';
+
+
 
 function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
-      <h1>Hello World from React!</h1>
+      <h1>Welcome to the SoleShop</h1>
       <Catalog></Catalog>
 
+      <About></About>
       <Footer></Footer>
     </div>
   );

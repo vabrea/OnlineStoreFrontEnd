@@ -3,7 +3,9 @@ import "./footer.css";
 function Footer(){
     return (
         <div className="footer">
-            <h1>I'm the Footer</h1>
+            <h1>soleshop &copy; 2022</h1>
+            <p>Ventura, CA</p>
+            
         </div>
     );
 }
