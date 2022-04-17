@@ -1,17 +1,26 @@
 import "./product.css"
 import SizeSelect from "./sizeselect";
+import {useState} from 'react'
 
-function Product(){
+const Product = (props) => {
+    const [size, setSize] = useState(1);
+
+
+    const handleSizeChange = (val) => {
+        console.log("The size has changed", val);
+        setSize(val);
+    };
+
     return(
         <div className="product">
-            <img src="/images/Dunk-UNC.jpg"></img>
-            <h4>Nike Dunk UNC</h4>
+            <img src={"/images/" + props.info.image}></img>
+            <h4>{props.info.title}</h4>
             <p>Available only in Men's US sizes</p>
             <p>8.5 - 12.5</p>
 
-            <label>$150.00</label>
+            <label>${props.info.price.toFixed(2)}</label>
 
-            <SizeSelect></SizeSelect>
+            <SizeSelect onChange={handleSizeChange}></SizeSelect>
 
             <button className="btn btn-primary">Add to Cart</button>
 

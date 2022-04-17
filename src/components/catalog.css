@@ -1,6 +1,7 @@
 .catalog {
-  padding: 3px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  background-color: lightgray;
+}
+
+.catalog .product {
+  display: inline-block;
 }

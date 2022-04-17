@@ -10,11 +10,8 @@ const About = () => {
 
     return (
         <div className="about">
-            <h3>About Me</h3>
-            <br></br>
-            <h4>{name}</h4>
-            
-
+            <h5>About Me</h5>
+            <h5>{name}</h5>
             <button onClick = {handleShowName}>Click Me!</button>
         </div>
     );

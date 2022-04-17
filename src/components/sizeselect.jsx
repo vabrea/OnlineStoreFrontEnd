@@ -1,13 +1,15 @@
 import React from "react";
 import "./sizeselect.css";
 
-const SizeSelect = () => {
+
+const SizeSelect = (props) => {
     let [size, setSize] = React.useState(8.5);
 
     const handleIncrease = () => {
         let maxSize = size + 0.5;
         if(maxSize < 13.0 ) {
         setSize(size + 0.5);
+        props.onChange(maxSize);
     };
 };
 
@@ -15,6 +17,7 @@ const SizeSelect = () => {
         let nextSize = size - 0.5;
         if(nextSize >8.0 ) {
         setSize(size - 0.5);
+        props.onChange(nextSize);
     };
 };
 
