@@ -1,15 +1,15 @@
 import "./product.css"
-import SizeSelect from "./sizeselect";
+import SizeSelect from "./sizeselect"
 import {useState} from 'react'
 
 const Product = (props) => {
-    const [size, setSize] = useState(1);
+    const [size, setSize] = useState(1)
 
 
     const handleSizeChange = (val) => {
-        console.log("The size has changed", val);
-        setSize(val);
-    };
+        console.log("The size has changed", val)
+        setSize(val)
+    }
 
     return(
         <div className="product">
@@ -22,10 +22,10 @@ const Product = (props) => {
 
             <SizeSelect onChange={handleSizeChange}></SizeSelect>
 
-            <button className="btn btn-primary">Add to Cart</button>
+            <button className="btn btn-primary"><i className="bi bi-cart3"></i>Add to Cart</button>
 
         </div>
-    );
+    )
 }
 
-export default Product;
+export default Product

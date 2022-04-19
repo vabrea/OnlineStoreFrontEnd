@@ -1,5 +1,7 @@
 .about {
   font-size: 12px;
+  background-color: lightgray;
+  margin-top: 25px;
 }
 
 .about h5 {

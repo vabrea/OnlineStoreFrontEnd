@@ -1,10 +1,10 @@
 import "./footer.css";
 
-function Footer(){
+const Footer = () => {
     return (
         <div className="footer">
             <h1>soleshop &copy; 2022</h1>
-            <p>Ventura, CA</p>
+            <h1>Ventura, CA</h1>
             
         </div>
     );

@@ -1,0 +1,19 @@
+.todo {
+  background-color: lightgray;
+  color: black;
+  margin-bottom: 25px;
+}
+
+.todo input {
+  margin-right: 25px;
+  margin-bottom: 15px;
+}
+
+.todo button:hover {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.todo button {
+  border: 1px solid black;
+}

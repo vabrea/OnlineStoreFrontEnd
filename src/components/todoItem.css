@@ -1,0 +1,13 @@
+.todo-item {
+  color: black;
+  display: flex;
+  justify-content: center;
+  column-gap: 75px;
+  font-family: "Akshar", sans-serif;
+}
+
+.item-ent {
+  width: 125px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}

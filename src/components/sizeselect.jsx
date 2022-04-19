@@ -24,7 +24,7 @@ const SizeSelect = (props) => {
     return(
         <div className="sizes">
             <button onClick = {handleDecrease} className="btn-warning">-</button>
-            <label>{size}</label>
+            <label>sz: {size}</label>
             <button onClick = {handleIncrease} className="btn-warning">+</button>
         </div>
     );

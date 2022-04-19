@@ -5,7 +5,9 @@ import Footer from './components/footer';
 import Catalog from './components/catalog';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import About from './components/about';
+import Todo from './components/todo';
 
 
 
@@ -17,6 +19,7 @@ function App() {
       <Catalog></Catalog>
 
       <About></About>
+      <Todo></Todo>
       <Footer></Footer>
     </div>
   );
