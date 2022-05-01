@@ -8,19 +8,28 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import About from './components/about';
 import Todo from './components/todo';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/home';
+import Admin from './components/admin';
 
 
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <NavBar></NavBar>
-      <h1>Welcome to the soleshop</h1>
-      <Catalog></Catalog>
+      
+      <Routes>
+      <Route path ="/home" exact element={<Home />}></Route>
+        <Route path ="/catalog" exact element={<Catalog />}></Route>
+        <Route path="/about" exact element={<About />}></Route>
+        <Route path="/shoppinglist" exact element={<Todo />}></Route>
+        <Route path="/admin" exact element={<Admin />}></Route>
 
-      <About></About>
-      <Todo></Todo>
+      </Routes>
       <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }

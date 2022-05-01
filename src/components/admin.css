@@ -1,0 +1,22 @@
+.admin .section-container {
+  display: flex;
+  height: 100vh;
+  margin-top: 35px;
+}
+
+.admin .sec-products {
+  flex: 1;
+  display: block;
+}
+
+.admin .sec-coupons {
+  flex: 1;
+}
+
+.my-control label {
+  display: inline-block;
+  width: 180px;
+  text-align: right;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
