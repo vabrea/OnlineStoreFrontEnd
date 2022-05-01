@@ -6,6 +6,8 @@ import { useState } from 'react';
 const Admin = () => {
     const [product, setProduct] = useState({});
     const [coupon, setCoupon] = useState({})
+    const [errorVisible, setErrorVisible] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
     
     const handleTextChange = (e) => {
         let copy = {...product};
@@ -20,20 +22,26 @@ const Admin = () => {
 
         setCoupon(copy)
     };
+
+    const showError = (text) => {
+        setErrorMessage(text);
+        setErrorVisible(true);
+    }
     const saveProduct = () => {
                 
         if(product.title.length < 5){
-            alert("Title must have at least 5 characters.")
+            showError ("Error, Title should have at least 5 characters.")
             return;
+            
         }
 
         if(!product.category){
-            alert("Category can not be empty")
+            showError("Error, Category should not be blank")
             return;
         }
 
         if(!product.image){
-            alert("Image can not be empty")
+            showError("Image can not be empty")
             return;
         }
 
@@ -41,10 +49,10 @@ const Admin = () => {
         savedProduct.price = parseFloat(savedProduct.price)
 
         if(!savedProduct.price || savedProduct.price < 1){
-            alert("Price must be greater than $1")
+            showError("Price must be greater than $1")
             return;
         }
-
+        setErrorVisible(false)
         console.log(savedProduct)
   
     };
@@ -60,21 +68,22 @@ const Admin = () => {
         //validation
         //discount cant be greater than 35%
         if(!savedCoupon.discount || savedCoupon.discount > 35) {
-            alert("Error, discount can not be more than 35%")
+            showError("Error, discount can not be more than 35%")
             return;
         }
         //code should have at least 5 chars
         if(savedCoupon.coupon.length < 5) {
-            alert("Coupon code must contain 5 characters.")
+            showError("Coupon code must contain 5 characters.")
             return;
         }
-
+        setErrorVisible (false)
         console.log("Saving Coupon")
         console.log(coupon)
     };
 
     return (
         <div className="admin">
+            { errorVisible ? <div className='alert alert-danger'>{errorMessage}</div> : null}
             <div className="section-container">
                 <section className='sec-products'>
                     <h2>Manage Products</h2>
