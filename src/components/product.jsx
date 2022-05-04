@@ -1,14 +1,19 @@
 import "./product.css"
 import SizeSelect from "./sizeselect"
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import store from "../context/storeContext" 
 
 const Product = (props) => {
     const [size, setSize] = useState(1)
-
+    let addProdToCart = useContext(store).addProdToCart;
 
     const handleSizeChange = (val) => {
         console.log("The size has changed", val)
         setSize(val)
+    }
+
+    const handleAdd = () => {
+        addProdToCart(props.info);
     }
 
     return(
@@ -22,7 +27,7 @@ const Product = (props) => {
 
             <SizeSelect onChange={handleSizeChange}></SizeSelect>
 
-            <button className="btn btn-primary"><i className="bi bi-cart3"></i>Add to Cart</button>
+            <button onClick={handleAdd} className="btn btn-primary"><i className="bi bi-cart3"></i>Add to Cart</button>
 
         </div>
     )

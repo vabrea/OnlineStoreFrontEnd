@@ -12,11 +12,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home';
 import Admin from './components/admin';
 
+import GlobalStoreProvider from "./context/globalStoreProvider";
+import Cart from './components/cart';
 
 
 function App() {
   return (
     <div className="App">
+      <GlobalStoreProvider>
       <BrowserRouter>
       <NavBar></NavBar>
       
@@ -26,10 +29,11 @@ function App() {
         <Route path="/about" exact element={<About />}></Route>
         <Route path="/shoppinglist" exact element={<Todo />}></Route>
         <Route path="/admin" exact element={<Admin />}></Route>
-
+        <Route path="/cart" exact element={<Cart />}></Route>
       </Routes>
       <Footer></Footer>
       </BrowserRouter>
+      </GlobalStoreProvider>
     </div>
   );
 }
