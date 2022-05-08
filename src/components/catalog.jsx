@@ -18,7 +18,7 @@ const Catalog = () =>{
 
     return(
         <div className="catalog">
-            <h4>We currently have {products.length} shoes in stock!</h4>
+            <h6>We currently have {products.length} shoes in stock!</h6>
             
 
             {products.map((prod) => (

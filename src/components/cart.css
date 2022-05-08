@@ -1,3 +1,27 @@
-.cart-page {
-  height: 75vh;
+.cart-page .cart-content {
+  display: flex;
+  background-color: lightgray;
+}
+
+.cart-products {
+  flex: 3;
+}
+
+.side-panel {
+  flex: 1;
+  margin-right: 100px;
+}
+
+.side-panel button i {
+  margin-right: 5px;
+}
+
+.side-panel button {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.side-panel button:hover {
+  text-decoration: underline;
+  font-weight: bold;
 }

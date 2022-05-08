@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600&family=Lobster&display=swap");
+
 .admin .section-container {
   display: flex;
   height: 100vh;
   margin-top: 35px;
+  background-color: lightgray;
 }
 
 .admin .sec-products {
@@ -19,4 +22,9 @@
   text-align: right;
   margin-right: 15px;
   margin-bottom: 15px;
+}
+
+.admin h2 {
+  font-family: "Lobster", cursive;
+  font-size: 36px;
 }

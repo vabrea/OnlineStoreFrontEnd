@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600&family=Lobster&display=swap");
+
 .catalog {
   background-color: lightgray;
 }
 
+.catalog h6 {
+  font-family: "Lobster", cursive;
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .catalog .product {
   display: inline-block;
   margin-bottom: 25px;

@@ -1,1 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600&family=Lobster&display=swap");
 
+.home h6 {
+  font-family: "Lobster", cursive;
+  font-size: 24px;
+}
+
+.home {
+  background-color: lightgray;
+}
+.home-welcome {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.home-user {
+  flex: 1;
+}
+
+.home-link {
+  flex: 1;
+}

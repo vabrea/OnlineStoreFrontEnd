@@ -10,15 +10,23 @@ const Home = () => {
 
     return (
         <div className="home">
+            <div className="home-welcome">
+                <div className="home-user">
+                    <h6>Welcome back to soleshop {user.email} </h6>
+                </div>
+            
+            <div className="home-link">
+                <Link className="btn btn-med btn-danger" to="/catalog">
+                    Check out our Catalog!
+                </Link>
+            </div>
+            </div>
 
-            <h6>Welcome back {user.email} </h6>
-            <h1>Welcome to the soleshop</h1>
-        
-
-        
-            <Link className="btn btn-lg btn primary" to="/catalog">
-                Check out our Catalog!
-            </Link>
+            <div className="image-container">
+                <div className="home-img">
+                    <img src="/images/homepage.jpeg"/>
+                </div>
+            </div>
         </div>
     );
 

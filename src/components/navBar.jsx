@@ -34,7 +34,7 @@ const NavBar = () => {
               </li>
             </ul>
             <form className="d-flex">
-              <Link className="btn btn-outline-light" to="/cart" >Items: {cart.length}</Link>
+              <Link className="btn btn-outline-light" to="/cart" >Cart: {cart.length}</Link>
             </form>
           </div>
         </div>
