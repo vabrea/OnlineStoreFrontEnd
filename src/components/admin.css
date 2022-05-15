@@ -2,7 +2,6 @@
 
 .admin .section-container {
   display: flex;
-  height: 100vh;
   margin-top: 35px;
   background-color: lightgray;
 }

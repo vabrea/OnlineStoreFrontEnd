@@ -22,7 +22,7 @@ function App() {
       <GlobalStoreProvider>
       <BrowserRouter>
       <NavBar></NavBar>
-      
+
       <Routes>
       <Route path ="/home" exact element={<Home />}></Route>
         <Route path ="/catalog" exact element={<Catalog />}></Route>

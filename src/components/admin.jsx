@@ -1,6 +1,8 @@
 import React from 'react'
 import "./admin.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import DataService from "../services/dataService";
+
 
 
 const Admin = () => {
@@ -8,7 +10,14 @@ const Admin = () => {
     const [coupon, setCoupon] = useState({})
     const [errorVisible, setErrorVisible] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [allCoupons, setAllCoupons] = useState([]);
+    const [allProducts, setAllProducts] = useState ([]);
     
+    useEffect(() => {
+        loadCoupons();
+        loadProducts();
+    }, []);
+
     const handleTextChange = (e) => {
         let copy = {...product};
         copy[e.target.name] = e.target.value;
@@ -27,7 +36,7 @@ const Admin = () => {
         setErrorMessage(text);
         setErrorVisible(true);
     }
-    const saveProduct = () => {
+    const saveProduct = async () => {
                 
         if(product.title.length < 5){
             showError ("Error, Title should have at least 5 characters.")
@@ -53,11 +62,19 @@ const Admin = () => {
             return;
         }
         setErrorVisible(false)
-        console.log(savedProduct)
+        
+        let service = new DataService();
+        let response = await service.saveProduct(savedProduct);
+        console.log(response)
+        
+
+        let copy = [...allProducts];
+        copy.push(response);
+        setAllProducts(copy);
   
     };
 
-    const saveCoupon = () => {
+    const saveCoupon = async () => {
         
 
         let savedCoupon = {...coupon};
@@ -72,14 +89,37 @@ const Admin = () => {
             return;
         }
         //code should have at least 5 chars
-        if(savedCoupon.coupon.length < 5) {
+        if(savedCoupon.couponCode.length < 5) {
             showError("Coupon code must contain 5 characters.")
             return;
         }
         setErrorVisible (false)
-        console.log("Saving Coupon")
-        console.log(coupon)
+
+        let service = new DataService();
+        let response = await service.saveCoupon(savedCoupon);
+        console.log(response)
+       
+
+        let copy = [...allCoupons];
+        copy.push(response);
+        setAllCoupons(copy);
+        
+       
     };
+
+    const loadCoupons = async () => {
+        let service = new DataService();
+        let coupons = await service.getCoupons();
+        setAllCoupons(coupons)
+    };
+
+
+    const loadProducts = async () => {
+        let service = new DataService();
+        let product = await service.getCatalog();
+        setAllProducts(product)
+    };
+
 
     return (
         <div className="admin">
@@ -110,11 +150,17 @@ const Admin = () => {
                       
                     
                 </section>
+
+                <div className="product-list">
+                 <ul>
+                     {allProducts.map(product => <li key={product._id} >{product.title} - ${product.price}</li>)}
+                 </ul>
+             </div>
                 <section className='sec-coupons'>
                     <h2>Manage Coupons</h2>
                     <div className='my-control'>
                         <label>Coupon Code: </label>
-                        <input onChange = {handleCoupon} name="coupon" type ="text"></input>
+                        <input onChange = {handleCoupon} name="couponCode" type ="text"></input>
                         </div>
                         <div className='my-control'>
                         <label>Discount: </label>
@@ -125,6 +171,13 @@ const Admin = () => {
                         </div>
                     
                 </section>
+
+             <div className="coupon-list">
+                 <ul>
+                     {allCoupons.map(coupon => <li key={coupon._id} >{coupon.couponCode} - {coupon.discount}</li>)}
+                 </ul>
+             </div>
+              
             </div>
 
         </div>

@@ -24,7 +24,7 @@ const Product = (props) => {
             <p>Available only in Men's US sizes</p>
             <p>8.5 - 12.5</p>
 
-            <label>${props.info.price.toFixed(2)}</label>
+            <label>${(props.info.price * 1).toFixed(2)}</label>
 
             <SizeSelect onChange={handleSizeChange}></SizeSelect>
 
